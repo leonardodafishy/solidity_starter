@@ -1,80 +1,46 @@
-# Hello World! in Solidity
+# Exception Handling in Solidity Smart Contract
+
+This project demonstrates the usage of require(), assert(), and revert() statements in a Solidity smart contract. It provides a basic example of how these statements can be employed for error handling and control flow in Ethereum smart contracts.
+
+## Description
+
+In Ethereum smart contract development, handling exceptions is crucial to ensure the integrity and security of the blockchain. This contract showcases three important exception-handling mechanisms:
+1. require(): Used to check conditions and revert transactions if the conditions are not met.
+
+2. assert(): Employed to verify internal consistency within the contract, typically for avoiding overflows and underflows.
+
+3. revert(): Allows for explicit transaction reversal with a custom error message.
 
 
-## Install
+## Getting Started
 
-1. Install [Node.js](https://nodejs.org)
+### Installing
 
-   Download and install from the official site.
+1. Clone this repository to your local machine.
+```
+git clone <repository-url>
+```
 
-2. Install [Truffle](https://github.com/trufflesuite/truffle)
+### Executing program
 
-   ```bash
-   npm install -g truffle
-   ```
+To interact with the smart contract, you'll need to:
+
+1. Compile and deploy the contract to an Ethereum testnet or local development environment. You can use tools like Truffle or Remix for this purpose.
+
+2. Use a web3.js or ethers.js script to interact with the deployed contract. Examples of interaction include making deposits, withdrawals, and triggering a revert.
+
+3. Run the script to observe how the contract handles different scenarios.
+
+## Help
+
+If you encounter any issues or have questions regarding the smart contract or its usage, feel free to open an issue in this repository.
+
+## Authors
+
+Miguel Fesalbon
+@leonardodafishy
 
 
-## Initialize
+## License
 
-1. Initialize Truffle in your project folder
-
-   ```bash
-   truffle init
-   ```
-
-   After initialization, you will find two folders called `contracts` and `migrations`. Contracts go in the `contracts` folder while contract deployment settings go in `migrations`.
-
-2. The "Hello World!" contract
-
-   This is an example of a "Hello World!" contract in Solidity. 
-   "HelloWorld.sol" in `contracts` contains the following code:
-
-   ```solidity
-   // SPDX-License-Identifier: MIT
-   // compiler version must be greater than or equal to 0.8.17 and less than 0.9.0
-   pragma solidity ^0.8.17;
-   
-   contract HelloWorld {
-       string public greet = "Hello World!";
-   }   
-   ```
-
-3. Prepare the migration
-
-   "2_deploy_migration.js" in `migrations` contains the following code:
-
-   ```javascript
-   var HelloWorld = artifacts.require("HelloWorld");
-   module.exports = function(deployer) {
-     deployer.deploy(HelloWorld);
-   }
-   ```
-
-4. Start Truffle console in development mode
-
-   ```bash
-   truffle develop
-   ```
-
-   In the Truffle console, execute
-
-   ```bash
-   compile
-   migrate
-   ```
-   If you want to remigrate existing contracts, run `migrate --reset` instead of simply `migrate`.
-
-5. Test your contract
-
-   In the interactive Truffle console, run the following commands:
-
-   ```javascript
-   let instance = await HelloWorld.deployed()
-   instance.greet()
-   ```
-
-   Then you will see:
-
-   ```bash
-   'Hello World!'
-   ```
+This project is licensed under the MIT License - see the LICENSE.md file for details
